@@ -1,0 +1,2 @@
+class TransactionFileReader:
+    pass
