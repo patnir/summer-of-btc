@@ -1,22 +1,21 @@
 """
-blocks - set of transactions 
+blocks - set of transactions
 
-Transaction: 
+Transaction:
     fee: number
     weight: number
     parent_transactions: Transaction[]
-    time: timestamp, probably? 
+    time: timestamp, probably?
 
-
-Miner selects Transactions[] Ordered (by time probably) where sum(Transactions.weight) < max block weight
-
-    allow Transaction[] where Transaction.parent_transactions.all.timestamps() < specific transaction .timestamp
-
+Miner selects Transactions[] Ordered (by time probably) where sum(Transactions.weight)
+    < max block weight
+    allow Transaction[] where Transaction.parent_transactions.all.timestamps()
+        < specific transaction .timestamp
 
 Goal: Miner has a block with the fattest fees lololol
 
 
-Question: 
+Question:
 1. what is the point of the weights
-2. 
+2.
 """
