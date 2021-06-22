@@ -1,4 +1,4 @@
-,tx_id,fee,weight,parents,total_parents,parent_later,earliest_parent_index
+original_index,tx_id,fee,weight,parents,total_parents,parent_later,earliest_parent_index
 0,2e3da8fbc1eaca8ed9b7c2db9e6545d8ccac3c67deadee95db050e41c1eedfc0,452,1620,[],0,False,10428
 2,b0ef627c8dc2a706475d33d7712209ec779f7a8302aaeab86c64cf00316a3df8,226,900,[],0,False,10428
 3,8c25f9be93990b96e8bc363778d6debee6867c7d73cefab69405d41e677b536c,258,1032,[],0,False,10428
