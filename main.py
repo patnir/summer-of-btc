@@ -14,8 +14,5 @@ Miner selects Transactions[] Ordered (by time probably) where sum(Transactions.w
 
 Goal: Miner has a block with the fattest fees lololol
 
-
-Question:
-1. what is the point of the weights
-2.
+weight of the block must not exceed 4,000,000
 """
