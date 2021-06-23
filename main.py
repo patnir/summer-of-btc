@@ -87,4 +87,4 @@ if __name__ == '__main__':
     transaction_file = f"{current_directory}/earlier_parent_filtered_transactions_reduced.csv"
     block_file = f"{current_directory}/block.txt"
 
-    KnapsackSolver(4000000, transaction_file, block_file).solve()
+    KnapsackSolver(400000, transaction_file, block_file).solve()
