@@ -49,6 +49,19 @@ class KnapsackSolver:
         self.block = sorted(self.block, key=lambda x: x[0])
         print("writing block")
         self.write_block()
+        print(self.knapsack_non_dynamic(self.max_weight, self.transactions["weight"],
+                                        self.transactions["fee"], len(self.transactions)))
+
+    def knapsack_non_dynamic(self, max_weight, weights, fees, total_transactions):
+        if total_transactions == 0 or max_weight == 0:
+            return 0
+        if weights[total_transactions - 1] > max_weight:
+            return self.knapsack_non_dynamic(max_weight, weights, fees, total_transactions - 1)
+
+        left = fees[total_transactions - 1] + self.knapsack_non_dynamic(
+            max_weight - weights[total_transactions - 1], weights, fees, total_transactions - 1)
+        right = self.knapsack_non_dynamic(max_weight, weights, fees, total_transactions - 1)
+        return max(left, right)
 
     def knapsack(self, weight, weights, fees, total_transactions):
         knapsack_2d_array = [[0 for _ in range(weight + 1)] for _ in range(total_transactions + 1)]
@@ -66,6 +79,7 @@ class KnapsackSolver:
                     knapsack_2d_array[i][weight_index] = knapsack_2d_array[i - 1][weight_index]
 
         res = knapsack_2d_array[total_transactions][weight]
+        print(res)
         weight_index = weight
 
         print("traversing 2d knapsack array")
@@ -84,7 +98,7 @@ class KnapsackSolver:
 
 if __name__ == '__main__':
     current_directory = os.getcwd()
-    transaction_file = f"{current_directory}/earlier_parent_filtered_transactions.csv"
+    transaction_file = f"{current_directory}/earlier_parent_filtered_transactions_reduced.csv"
     block_file = f"{current_directory}/block.txt"
 
-    KnapsackSolver(4000000, transaction_file, block_file).solve()
+    KnapsackSolver(4000, transaction_file, block_file).solve()
