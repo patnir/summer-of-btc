@@ -84,7 +84,7 @@ class KnapsackSolver:
 
 if __name__ == '__main__':
     current_directory = os.getcwd()
-    transaction_file = f"{current_directory}/earlier_parent_filtered_transactions.csv"
-    block_file = f"{current_directory}/test_block.txt"
+    transaction_file = f"{current_directory}/earlier_parent_filtered_transactions_reduced.csv"
+    block_file = f"{current_directory}/block.txt"
 
-    KnapsackSolver(10000, transaction_file, block_file).solve()
+    KnapsackSolver(4000000, transaction_file, block_file).solve()
