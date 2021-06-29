@@ -25,3 +25,10 @@ solve this recursively instead
 I moved the formula to be recursive and the max depth reached in this case as well.
 
 I'm at time, I've spent a total of 8 hours on this and I'm going to call it. 
+
+## FINALLY a solution
+
+I realized that the key to this was analyzing the ratio between fee and weight. It is pretty obvious then that 
+you can get a better block (not sure if the most optimal) by picking the blocks that have the best ratio of fee to weight. 
+This only works when all the fee and weight numbers are not miles apart from each other. That would have 
+led to various skewed results. 
