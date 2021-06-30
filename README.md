@@ -31,4 +31,15 @@ I'm at time, I've spent a total of 8 hours on this and I'm going to call it.
 I realized that the key to this was analyzing the ratio between fee and weight. It is pretty obvious then that 
 you can get a better block (not sure if the most optimal) by picking the blocks that have the best ratio of fee to weight. 
 This only works when all the fee and weight numbers are not miles apart from each other. That would have 
-led to various skewed results. 
+led to various skewed results.
+
+## Feedback from jonas
+
+"Additionally, I looked over your solution, and your solution includes
+transactions with unconfirmed parents. 
+You'll have to filter those out in order to create a valid block."
+
+This goes againts the readme pdf: 
+Transactions with parent transactions in the mempool 
+may be included in the list, but only if all of their 
+parents appear before them in the list.
